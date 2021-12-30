@@ -11,7 +11,7 @@ class Sveltin < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "http://github.com/sveltinio/sveltin/releases/download/v0.1.1/sveltin_0.1.1_Darwin-arm64.tar.gz"
-      sha256 "f9d9800e088d4caf7d9532f61e60190ecfb72dd8d27924f9ad0301c3f7a9551e"
+      sha256 "c33d2a636ece7d07005891d99e4843242a4922a1a5c4b8ace3c436954f4fc912"
 
       def install
         bin.install "sveltin"
@@ -19,7 +19,7 @@ class Sveltin < Formula
     end
     if Hardware::CPU.intel?
       url "http://github.com/sveltinio/sveltin/releases/download/v0.1.1/sveltin_0.1.1_Darwin-x86_64.tar.gz"
-      sha256 "74b41d96215b2995cdb30a3c180e53828630198d0eee0f27b7fdcd8409bedaf4"
+      sha256 "9ff8a991c8ebed78c44b0077ec231998c92d6cc94049e98831f2e976b5eaa511"
 
       def install
         bin.install "sveltin"
@@ -28,17 +28,17 @@ class Sveltin < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.1.1/sveltin_0.1.1_Linux-arm64.tar.gz"
-      sha256 "a9fe423beeebd3c69c4cda05d280b57bf14d454b64189ccdd6f23499039d6f56"
+    if Hardware::CPU.intel?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.1.1/sveltin_0.1.1_Linux-x86_64.tar.gz"
+      sha256 "1e6b45bb382dba57806e87c6e7e90091bc46d0fc2bf6f3f771d038dcc365f609"
 
       def install
         bin.install "sveltin"
       end
     end
-    if Hardware::CPU.intel?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.1.1/sveltin_0.1.1_Linux-x86_64.tar.gz"
-      sha256 "75c99126fba249e051c56e099db91e0c4540fe13788cbb1307294535cdaf665e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.1.1/sveltin_0.1.1_Linux-arm64.tar.gz"
+      sha256 "a32a25138f404ad62028796cf16d099e06faf3760b9c3989b6eed6f2f8dfa4d5"
 
       def install
         bin.install "sveltin"
