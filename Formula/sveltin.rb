@@ -9,17 +9,17 @@ class Sveltin < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.2.1/sveltin_0.2.1_Darwin-x86_64.tar.gz"
-      sha256 "f8b9fcc3d12f26a61b216cf455f1d068e03376ea5f33314884965b2e14ce17f7"
+    if Hardware::CPU.arm?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.2.1/sveltin_0.2.1_Darwin-arm64.tar.gz"
+      sha256 "54a3e5d83aae21bc1c0f4ca4e0c36bbb0108fbb9eebd4729f96cf6f73ce454f5"
 
       def install
         bin.install "sveltin"
       end
     end
-    if Hardware::CPU.arm?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.2.1/sveltin_0.2.1_Darwin-arm64.tar.gz"
-      sha256 "47343ed1f3288616fd0947a6b9b5133f82dec0abb09bc6704a437da713bcb1c0"
+    if Hardware::CPU.intel?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.2.1/sveltin_0.2.1_Darwin-x86_64.tar.gz"
+      sha256 "24708fea13ae02d59667d37e0e45665a5edea1bbb24a58605b8f62100fc4f653"
 
       def install
         bin.install "sveltin"
@@ -30,7 +30,7 @@ class Sveltin < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "http://github.com/sveltinio/sveltin/releases/download/v0.2.1/sveltin_0.2.1_Linux-x86_64.tar.gz"
-      sha256 "1166646ab317f7098e1f1ffae13bace43fa7c99d92b091438d1475017ba462d3"
+      sha256 "d3546c2314afac53dfdcc7bc212cdbf227f9965cb01ff8b2953ebe07bdcfcc16"
 
       def install
         bin.install "sveltin"
@@ -38,7 +38,7 @@ class Sveltin < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "http://github.com/sveltinio/sveltin/releases/download/v0.2.1/sveltin_0.2.1_Linux-arm64.tar.gz"
-      sha256 "c69e3159fce356480ff62b27bc237c2841c8fb42472db0f68909cf8099dfeafb"
+      sha256 "79640c066007b5a312c98ac2858b3e8a9b95fca663c5e284d11d76529a2d178c"
 
       def install
         bin.install "sveltin"
@@ -47,9 +47,10 @@ class Sveltin < Formula
   end
 
   depends_on "git"
+  depends_on "node"
 
   def caveats; <<~EOS
-    How to use this binary
+    To get started run: `sveltin -h` or visit https://docs.sveltin.io
   EOS
   end
 end
