@@ -9,17 +9,17 @@ class Sveltin < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.7.2/sveltin_0.7.2_Darwin-x86_64.tar.gz"
-      sha256 "2608fc3d0c2df671233032814c0c957b539912c6f9af5a7a0c8388329b258296"
+    if Hardware::CPU.arm?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.7.2/sveltin_0.7.2_Darwin-arm64.tar.gz"
+      sha256 "8d647d3cd3bced67f0b3666fa3e7722a1057905358e979ce0ccaa935ff27b49e"
 
       def install
         bin.install "sveltin"
       end
     end
-    if Hardware::CPU.arm?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.7.2/sveltin_0.7.2_Darwin-arm64.tar.gz"
-      sha256 "dda5c22669b3645f125c490d7465ad611d40efe47e80d25a999ef859d9efff4f"
+    if Hardware::CPU.intel?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.7.2/sveltin_0.7.2_Darwin-x86_64.tar.gz"
+      sha256 "676b37f5e53cb31e61996e0956c5d3d72ef68ede7c118d68bdc1aefd6a9a77cf"
 
       def install
         bin.install "sveltin"
@@ -30,7 +30,7 @@ class Sveltin < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "http://github.com/sveltinio/sveltin/releases/download/v0.7.2/sveltin_0.7.2_Linux-arm64.tar.gz"
-      sha256 "cc5f2f3454d8f88e39d2cf67acaff310ba4095dffacabb5c3768a26ed21dff61"
+      sha256 "96556586688879eb16f2ee163b2606555cc0b580a8df1750f61bc0bf49d25a31"
 
       def install
         bin.install "sveltin"
@@ -38,7 +38,7 @@ class Sveltin < Formula
     end
     if Hardware::CPU.intel?
       url "http://github.com/sveltinio/sveltin/releases/download/v0.7.2/sveltin_0.7.2_Linux-x86_64.tar.gz"
-      sha256 "7fcbe4bd081c9ade53fa92f96186d2f4c9d0d8af9eaa35af7dc29adda4029cf9"
+      sha256 "eeaea87547900b0479a68d8baabfe1555fffcf00cd38137dd4048b318491945f"
 
       def install
         bin.install "sveltin"
