@@ -5,21 +5,21 @@
 class Sveltin < Formula
   desc "A powerful CLI for your next SvelteKit powered static website."
   homepage "https://sveltin.io"
-  version "0.8.7"
+  version "0.8.8"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.7/sveltin_0.8.7_Darwin-x86_64.tar.gz"
-      sha256 "d505f5369fa2eda7e2f498e650459a4411b5263ae2e9c0c9e682ec85985a7bd1"
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.8/sveltin_0.8.8_Darwin-x86_64.tar.gz"
+      sha256 "a33724eda87b61721c85e9b9d971c189c5f274efbc7ace62d2ffa9765ce7b9a9"
 
       def install
         bin.install "sveltin"
       end
     end
     if Hardware::CPU.arm?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.7/sveltin_0.8.7_Darwin-arm64.tar.gz"
-      sha256 "22001a03d95ad3cb564438527f01a45718ecde5c90ad69ef0140cfeff6eadcd8"
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.8/sveltin_0.8.8_Darwin-arm64.tar.gz"
+      sha256 "7207a1e5c9d380c1f2e2f82a88759da8d64794e7ccf63e003275b9b46aae9a5f"
 
       def install
         bin.install "sveltin"
@@ -28,17 +28,17 @@ class Sveltin < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.7/sveltin_0.8.7_Linux-x86_64.tar.gz"
-      sha256 "376a066cb1827bd5c1df2d3ec9a4071a91bd88aa1a3e325119d9f0df180078fe"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.8/sveltin_0.8.8_Linux-arm64.tar.gz"
+      sha256 "9ea0d349e0d9b27b9bac127c016dd2315a4da3798a8cec9785b28ed57a4f3bc4"
 
       def install
         bin.install "sveltin"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.7/sveltin_0.8.7_Linux-arm64.tar.gz"
-      sha256 "15b346551742d615f09b2bf9faeefab9ec5a62f5bfaa37daad4fd6fc5a610461"
+    if Hardware::CPU.intel?
+      url "http://github.com/sveltinio/sveltin/releases/download/v0.8.8/sveltin_0.8.8_Linux-x86_64.tar.gz"
+      sha256 "ee7113c4a4a32c11a84c9785574bf0d08701265776a0e6ae78c92f8884eabf12"
 
       def install
         bin.install "sveltin"
